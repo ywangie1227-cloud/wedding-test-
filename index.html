@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yen & Angie's Wedding Invitation</title>
   
+  <!-- 字體載入：Cormorant Garamond 與 Noto Serif TC -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+TC:wght@300;400;600&display=swap" rel="stylesheet">
@@ -159,3 +160,267 @@
 
     .section-title p {
       font-size: 0.85rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
+
+    /* 藝術感倒數計時器 (獨立白色微光卡片) */
+    .timer-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .time-card {
+      background: var(--white-card);
+      border-radius: 12px;
+      padding: 1.2rem 1rem;
+      min-width: 80px;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .time-num {
+      font-family: var(--font-en);
+      font-size: 2.2rem;
+      color: var(--primary-warm);
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .time-unit {
+      font-family: var(--font-en);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+      text-transform: uppercase;
+    }
+
+    .timer-divider {
+      width: 1px;
+      height: 40px;
+      background-color: rgba(212, 163, 115, 0.3);
+    }
+
+    /* V-Card 垂直資訊卡片 */
+    .v-card {
+      background: var(--white-card);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .v-card-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .v-card-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .v-card-label {
+      font-family: var(--font-en);
+      color: var(--secondary-sage);
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+
+    .v-card-val {
+      font-size: 1.15rem;
+      margin-top: 0.3rem;
+    }
+
+    /* 摺疊式面板 (Accordion) */
+    .accordion {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      background: var(--white-card);
+    }
+
+    .accordion-btn {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 1.2rem 1.5rem;
+      text-align: left;
+      font-size: 1rem;
+      font-family: var(--font-zh);
+      color: var(--text-dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .accordion-btn:hover {
+      background: rgba(212, 163, 115, 0.08);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 0 1.5rem;
+    }
+
+    .accordion-content.active {
+      padding: 1.2rem 1.5rem;
+    }
+
+    /* 表單區塊與雙語標籤 */
+    .form-group {
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-label span {
+      font-family: var(--font-en);
+      font-size: 0.8rem;
+      color: var(--secondary-sage);
+      margin-left: 0.3rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid rgba(141, 163, 153, 0.4);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.8);
+      font-family: var(--font-zh);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .form-control:focus {
+      border-color: var(--primary-warm);
+    }
+
+    .hidden-field {
+      display: none;
+    }
+
+    .sub-section-title {
+      color: var(--primary-warm);
+      font-size: 1.1rem;
+      margin: 1.8rem 0 1rem 0;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px dashed rgba(212, 163, 115, 0.4);
+      text-align: left;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--primary-warm);
+      color: #fff;
+      border: none;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: var(--font-zh);
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);
+      transition: background 0.3s;
+      margin-top: 1rem;
+    }
+
+    .btn-submit:hover {
+      background: #c39263;
+    }
+
+    /* RWD 手機版優化 */
+    @media (max-width: 600px) {
+      .hero-title { font-size: 2.8rem; }
+      .timer-container { gap: 0.4rem; }
+      .time-card { min-width: 65px; padding: 0.8rem 0.5rem; }
+      .time-num { font-size: 1.6rem; }
+      .v-card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂端固定毛玻璃導航列 -->
+  <header>
+    <nav>
+      <a href="#" class="nav-logo">Yen & Angie</a>
+      <ul class="nav-links">
+        <li><a href="#about">關於我們</a></li>
+        <li><a href="#details">婚禮詳情</a></li>
+        <li><a href="#rsvp">出席回函</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 首頁全螢幕封面背景 -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Yen & Angie</h1>
+      <p class="hero-slogan">"You are my greatest adventure."</p>
+      <p class="hero-date">2027 . 01 . 10</p>
+    </div>
+  </section>
+
+  <!-- 倒數計時器區塊 -->
+  <section id="about" class="container">
+    <div class="section-title">
+      <h2>COUNTDOWN</h2>
+      <p>期待與您相見的幸福倒數</p>
+    </div>
+    
+    <div class="timer-container">
+      <div class="time-card">
+        <div class="time-num" id="days">00</div>
+        <div class="time-unit">Days</div>
+      </div>
+      <div class="timer-divider"></div>
+      <div class="time-card">
+        <div class="time-num" id="hours">00</div>
+        <div class="time-unit">Hours</div>
+      </div>
+      <div class="timer-divider"></div>
+      <div class="time-card">
+        <div class="time-num" id="minutes">00</div>
+        <div class="time-unit">Mins</div>
+      </div>
+      <div class="timer-divider"></div>
+      <div class="time-card">
+        <div class="time-num" id="seconds">00</div>
+        <div class="time-unit">Secs</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 婚禮詳情 (V-Card & 摺疊交通指引) -->
+  <section id="details" class="container">
+    <div class="section-title">
+      <h2>WEDDING DETAILS</h2>
+      <p>婚禮資訊與交通指引</p>
+    </div>
+
+    <div class="v-card">
+      <div class="v-card-item">
+        <div class="v-card-label">DATE & TIME</div>
+        <div class="v-card-val">2027 年 01 月 10 日 星期日</div>
+        <div class="v-card-val" style="font-size: 0.95rem; color: var(--text-muted);">午宴 12:00（準時開席）</div>
+      </div>
+      <hr style="border: 0; border-top: 1px solid rgba(212, 163, 115, 0.2); margin: 1.5rem 0;">
+      <div class="v-card-item">
+        <div class="v-card-label">LOCATION</div>
+        <div cla

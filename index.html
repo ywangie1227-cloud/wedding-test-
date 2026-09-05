@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yen & Angie's Wedding Invitation</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+TC:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* 全局變數與 Morandi 暖陽色系 */
+    :root {
+      --primary-warm: #d4a373;
+      --secondary-sage: #8da399;
+      --bg-cream: #faf8f5;
+      --text-dark: #33302e;
+      --text-muted: #7c7772;
+      --white-card: rgba(255, 255, 255, 0.92);
+      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+      --font-en: 'Cormorant Garamond', serif;
+      --font-zh: 'Noto Serif TC', serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      font-family: var(--font-zh);
+      line-height: 1.8;
+    }
+
+    /* 防止手機端關鍵地點文字斷行 */
+    .no-wrap {
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    /* 頂端固定毛玻璃導航列 */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(250, 248, 245, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212, 163, 115, 0.2);
+    }
+
+    nav {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-logo {
+      font-family: var(--font-en);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary-warm);
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-warm);
+    }
+
+    /* 首頁全螢幕封面背景 */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('https://i.postimg.cc/k4s9DxpX/JUN00195-Korean-Edited.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 1rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-en);
+      font-size: 3.5rem;
+      font-weight: 400;
+      letter-spacing: 3px;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-slogan {
+      font-family: var(--font-en);
+      font-style: italic;
+      font-size: 1.4rem;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-date {
+      font-family: var(--font-en);
+      letter-spacing: 2px;
+      font-size: 1.1rem;
+    }
+
+    /* 通用容器 */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      font-family: var(--font-en);
+      font-size: 2.5rem;
+      color: var(--primary-warm);
+      font-weight: 400;
+      letter-spacing: 2px;
+    }
+
+    .section-title p {
+      font-size: 0.85rem;
